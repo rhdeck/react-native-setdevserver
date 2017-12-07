@@ -96,7 +96,7 @@ DEST=$CONFIGURATION_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH
 if [[ "$CONFIGURATION" = "Debug" && ! "$PLATFORM_NAME" == *simulator ]]; then
   PLISTBUDDY='/usr/libexec/PlistBuddy'
   PLIST=$TARGET_BUILD_DIR/$INFOPLIST_PATH
-  if [ -z ${RNDEVSERVER}]; then 
+  if [ -z ${RNDEVSERVER} ]; then 
     IP=$(ipconfig getifaddr en0)
     if [ -z "$IP" ]; then
       IP=$(ifconfig | grep 'inet ' | grep -v ' 127.' | cut -d\   -f2  | awk 'NR==1{print $1}')
@@ -106,7 +106,7 @@ if [[ "$CONFIGURATION" = "Debug" && ! "$PLATFORM_NAME" == *simulator ]]; then
       IP="$IP.xip.io"
     fi
   else
-    IP = ${RNDEVSERVER}
+    IP=${RNDEVSERVER}
     SKIPBUNDLER = 1
   fi
   $PLISTBUDDY -c "Add NSAppTransportSecurity:NSExceptionDomains:localhost:NSTemporaryExceptionAllowsInsecureHTTPLoads bool true" "$PLIST"

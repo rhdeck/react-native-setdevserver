@@ -15,9 +15,11 @@ module.exports = {
     if (!argv || !argv[0]) {
       //Remove from package.json
       package.developmentServer = null;
+      console.log("Successfully cleared the development server");
     } else {
       const server = argv[0];
       package.developmentServer = server;
+      console.log("Successfully set your development server to " + server);
     }
     fs.writeFileSync(packagePath, JSON.stringify(package, null, 2));
   }
