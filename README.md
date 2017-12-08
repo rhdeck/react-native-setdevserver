@@ -23,3 +23,6 @@ react-native setdevserver
 ```
 
 Note that the devserver is saved in your package.json, for replicability.
+
+**Note** this version only supports changing the development server in IOS. To
+change in Android, use the developer menu like you would before.
