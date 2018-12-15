@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var pbxproj = require("xcode");
+var pbxproj = require("@raydeck/xcode");
 var fs = require("fs");
 var path = require("path");
 var glob = require("glob");
@@ -32,12 +32,6 @@ let properties = {
 if (!fs.existsSync(filename)) {
   console.log("Could not find pbxproj file:", filename);
   process.exit(1);
-}
-const placeholder = "RNPlaceholder.swift";
-const placeholderPath = iosPath + "/" + placeholder;
-if (!fs.existsSync(placeholderPath)) {
-  console.log("Writing to ", placeholderPath);
-  fs.writeFileSync(placeholderPath, "");
 }
 var proj = pbxproj.project(filename);
 replaceVal =

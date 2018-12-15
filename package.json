@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/rhdeck/react-native-setdevserver#readme",
   "dependencies": {
-    "glob": "^7.1.2",
-    "xcode": "rhdeck/cordova-node-xcode"
+    "@raydeck/xcode": "^2.2.1",
+    "glob": "^7.1.2"
   },
   "rnpm": {
     "plugin": "index.js",
